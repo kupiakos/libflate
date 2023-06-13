@@ -20,6 +20,7 @@ where
     ///
     /// # Examples
     /// ```
+    /// # extern crate alloc;
     /// # use alloc::vec::Vec;
     /// use core2::io::{Cursor, Read};
     /// use libflate::deflate::Decoder;
@@ -53,7 +54,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use core2:io::Cursor;
+    /// use core2::io::Cursor;
     /// use libflate::deflate::Decoder;
     ///
     /// let encoded_data = [243, 72, 205, 201, 201, 87, 8, 207, 47, 202, 73, 81, 4, 0];

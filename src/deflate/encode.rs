@@ -143,7 +143,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use core2:io::Write;
+    /// use core2::io::Write;
     /// use libflate::deflate::Encoder;
     ///
     /// let mut encoder = Encoder::new(Vec::new());
@@ -168,7 +168,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use core2:io::Write;
+    /// use core2::io::Write;
     /// use libflate::deflate::{Encoder, EncodeOptions};
     ///
     /// let options = EncodeOptions::new().no_compression();
@@ -190,7 +190,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use core2:io::Write;
+    /// use core2::io::Write;
     /// use libflate::deflate::Encoder;
     ///
     /// let mut encoder = Encoder::new(Vec::new());
@@ -470,6 +470,7 @@ mod tests {
             encoder.flush().expect("Flush failed");
         }
         let finished = encoder.finish().unwrap();
+        #[cfg(feature = "std")]
         println!("{:?}", finished.0);
 
         let mut output = Vec::new();

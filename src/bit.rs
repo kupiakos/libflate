@@ -176,10 +176,8 @@ pub(crate) struct BitReaderState {
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[cfg(not(feature = "std"))]
+    use alloc::vec::Vec;
     use core2::io;
-    #[cfg(feature = "std")]
-    use std::io;
 
     #[test]
     fn writer_works() {

@@ -1,5 +1,6 @@
 #[cfg(test)]
 pub(crate) mod testonly {
+    use alloc::vec::Vec;
     use core2::io::{self, Read};
 
     pub struct WouldBlockReader<R> {

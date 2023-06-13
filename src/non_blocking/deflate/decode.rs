@@ -241,6 +241,7 @@ mod tests {
     use super::*;
     use crate::deflate::{EncodeOptions, Encoder};
     use crate::util::{nb_read_to_end, WouldBlockReader};
+    use alloc::{format, string::String, vec::Vec};
     use core2::io::{Read, Write};
 
     #[test]

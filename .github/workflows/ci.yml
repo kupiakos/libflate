@@ -27,7 +27,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: check
-          args: ${{ maxtix.features }} --workspace
+          args: ${{ matrix.features }} --workspace
 
   no-std:
     name: no_std Check
@@ -84,7 +84,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
-          args: ${{ maxtix.features }} --workspace
+          args: ${{ maxrix.features }} --workspace
 
   lints:
     name: Lints
@@ -116,4 +116,4 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: ${{ maxtix.features }} --workspace -- -D warnings
+          args: ${{ matrix.features }} --workspace -- -D warnings

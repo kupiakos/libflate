@@ -23,10 +23,7 @@ use crate::checksum;
 use crate::deflate;
 use crate::finish::{Complete, Finish};
 use crate::lz77;
-#[cfg(not(feature = "std"))]
 use core2::io;
-#[cfg(feature = "std")]
-use std::io;
 
 const COMPRESSION_METHOD_DEFLATE: u8 = 8;
 
@@ -687,10 +684,8 @@ where
 mod tests {
     use super::*;
     use crate::finish::AutoFinish;
-    #[cfg(not(feature = "std"))]
+    use alloc::{borrow::ToOwned, string::ToString, vec, vec::Vec};
     use core2::io::{Read as _, Write as _};
-    #[cfg(feature = "std")]
-    use std::io::{Read as _, Write as _};
 
     fn decode_all(buf: &[u8]) -> io::Result<Vec<u8>> {
         let mut decoder = Decoder::new(buf).unwrap();

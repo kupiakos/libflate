@@ -105,7 +105,7 @@ impl<T: Complete> AutoFinish<T> {
     /// # Examples
     ///
     /// ```
-    /// use core2:io::Write;
+    /// use core2::io::Write;
     /// use libflate::finish::AutoFinish;
     /// use libflate::gzip::Encoder;
     ///
@@ -167,7 +167,7 @@ impl<T: Complete> AutoFinishUnchecked<T> {
     /// # Examples
     ///
     /// ```
-    /// use core2:io::Write;
+    /// use core2::io::Write;
     /// use libflate::finish::AutoFinishUnchecked;
     /// use libflate::gzip::Encoder;
     ///

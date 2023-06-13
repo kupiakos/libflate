@@ -4,7 +4,7 @@
 //!
 //! # Examples
 //! ```
-//! use core2:io::{Read, Write};
+//! use core2::io::{Read, Write};
 //! use libflate::gzip::{Encoder, Decoder};
 //!
 //! // Encoding
@@ -925,7 +925,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use core2:io::Read;
+    /// use core2::io::Read;
     /// use libflate::gzip::Decoder;
     ///
     /// let encoded_data = [31, 139, 8, 0, 123, 0, 0, 0, 0, 3, 1, 12, 0, 243, 255,
@@ -1170,6 +1170,7 @@ where
 mod tests {
     use super::*;
     use crate::finish::AutoFinish;
+    use alloc::{vec, vec::Vec};
     use core2::io::{Read, Write};
 
     fn decode(buf: &[u8]) -> io::Result<Vec<u8>> {
