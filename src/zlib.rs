@@ -224,7 +224,7 @@ impl Header {
     {
         let mut buf = [0; 2];
         reader.read_exact(&mut buf)?;
-        let (cmf, flg) = (buf[0], buf[1]);
+        let [cmf, flg] = buf;
         let check = (u16::from(cmf) << 8) + u16::from(flg);
         if check % 31 != 0 {
             return Err(invalid_data_error!(
