@@ -36,11 +36,11 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v1
 
-      - name: Install stable toolchain
+      - name: Install nightly toolchain
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: nightly
           override: true
 
       - name: Install cargo no-std-check
