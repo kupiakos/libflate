@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         toolchain: [stable, beta, nightly]
-        features: [--no-default-features, --workspace-features]
+        features: [--no-default-features, --all-features]
     steps:
       - name: Checkout sources
         uses: actions/checkout@v1
@@ -49,7 +49,8 @@ jobs:
           command: install
           args: no-std-check
 
-      # `--no-default-features` doesn't work with --workspace correctly.
+      # https://github.com/mystor/cargo-no-std-check/issues/2
+      # `--no-default-features` doesn't work with `--workspace` correctly.
       - name: Run cargo no-std-check on libflate crate
         uses: actions-rs/cargo@v1
         with:
@@ -68,7 +69,7 @@ jobs:
     strategy:
       matrix:
         toolchain: [stable, beta, nightly]
-        features: [--no-default-features, --workspace-features]
+        features: [--no-default-features, --all-features]
     steps:
       - name: Checkout sources
         uses: actions/checkout@v1
@@ -92,7 +93,7 @@ jobs:
     strategy:
       matrix:
         toolchain: [stable, beta, nightly]
-        features: [--no-default-features, --workspace-features]
+        features: [--no-default-features, --all-features]
     steps:
       - name: Checkout sources
         uses: actions/checkout@v1
