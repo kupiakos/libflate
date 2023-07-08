@@ -47,7 +47,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: install
-          args: no-std-check
+          args: cargo-no-std-check
 
       # https://github.com/mystor/cargo-no-std-check/issues/2
       # `--no-default-features` doesn't work with `--workspace` correctly.
